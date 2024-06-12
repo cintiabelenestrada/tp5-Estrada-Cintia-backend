@@ -1,0 +1,17 @@
+{
+  "name": "tp5-estrada-cintia-backend",
+  "version": "1.0.0",
+  "description": "Project Backend for MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Mongo",
+    "backend",
+    "angular",
+    "node.js"
+  ],
+  "author": "Cintia Belen Estrada",
+  "license": "ISC"
+}
