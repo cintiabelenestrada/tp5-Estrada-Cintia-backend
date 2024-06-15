@@ -1,5 +1,5 @@
 //defino controlador para el manejo de CRUD
-const productoCtrl = require('./../controllers/producto.controller');
+const productoCtrl = require('../controllers/producto.controller');
 
 //creamos el manejador de rutas
 const express = require('express');
