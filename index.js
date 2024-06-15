@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
  res.send('¡Hola, mundo con middleware!');
 });
 app.use('/api/producto',require('./routes/producto.route.js'));
+app.use('/api/espectador',require('./routes/espectador.route.js'));
 
 
 // Iniciar el servidor
