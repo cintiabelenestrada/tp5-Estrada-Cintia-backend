@@ -39,4 +39,20 @@ productoCtrl.editProducto = async (req, res) => {
   }
 }
 
+//DELETE
+productoCtrl.deleteProducto = async (req, res) => {
+  try {
+      await Producto.deleteOne({ _id: req.params.id });
+      res.json({
+          status: '1',
+          msg: 'Producto removed'
+      })
+  } catch (error) {
+      res.status(400).json({
+          'status': '0',
+          'msg': 'Error procesando la operacion de Eliminación'
+      })
+  }
+}
+
 module.exports = productoCtrl;

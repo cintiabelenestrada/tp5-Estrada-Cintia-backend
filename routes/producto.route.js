@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/', productoCtrl.createProducto);
 router.get('/', productoCtrl.getProductos);
 router.put('/:id', productoCtrl.editProducto);
-
+router.delete('/:id', productoCtrl.deleteProducto);
 
 //exportamos el modulo de rutas
 module.exports = router;
