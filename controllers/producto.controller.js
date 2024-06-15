@@ -16,4 +16,11 @@ productoCtrl.createProducto = async (req, res) => {
       })
   }
 }
+
+//get que trae todos los Productos
+productoCtrl.getProductos = async (req, res) => {
+  var productos = await Producto.find();
+  res.json(productos);
+}
+
 module.exports = productoCtrl;

@@ -7,6 +7,7 @@ const router = express.Router();
 
 //definimos las rutas para la gestion de producto
 router.post('/', productoCtrl.createProducto);
+router.get('/', productoCtrl.getProductos);
 
 
 //exportamos el modulo de rutas
