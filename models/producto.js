@@ -6,6 +6,6 @@ const ProductoSchema = new Schema({
    imagen: { type: String, required: true },
    precio: { type: Number, required: true },
    stock: { type: Number, required: true },
-   destacado: { type: Boolean, required: true }
+   destacado: { type: Boolean, default: false }
 })
 module.exports = mongoose.models.Producto || mongoose.model('Producto', ProductoSchema);

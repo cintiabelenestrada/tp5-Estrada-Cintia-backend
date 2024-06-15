@@ -55,4 +55,15 @@ productoCtrl.deleteProducto = async (req, res) => {
   }
 }
 
+//get que trae solo los productos destacados
+productoCtrl.getProductoDestacado = async (req, res) => {
+  try {
+    const productosDestacados = await Producto.find({ destacado: true });
+    res.json(productosDestacados);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener los productos destacados', error });
+  }
+};
+
+
 module.exports = productoCtrl;

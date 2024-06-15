@@ -10,6 +10,5 @@ router.post('/', productoCtrl.createProducto);
 router.get('/', productoCtrl.getProductos);
 router.put('/:id', productoCtrl.editProducto);
 router.delete('/:id', productoCtrl.deleteProducto);
-
-//exportamos el modulo de rutas
+router.get('/destacados', productoCtrl.getProductoDestacado);
 module.exports = router;
