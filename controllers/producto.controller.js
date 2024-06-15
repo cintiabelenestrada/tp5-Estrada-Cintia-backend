@@ -23,4 +23,20 @@ productoCtrl.getProductos = async (req, res) => {
   res.json(productos);
 }
 
+//UPDATE
+productoCtrl.editProducto = async (req, res) => {
+  try {
+      await Producto.updateOne({ _id: req.params.id }, req.body);
+      res.json({
+          'status': '1',
+          'msg': 'Producto updated'
+      })
+  } catch (error) {
+      res.status(400).json({
+          'status': '0',
+          'msg': 'Error procesando la operacion, Edicion'
+      })
+  }
+}
+
 module.exports = productoCtrl;
