@@ -40,4 +40,20 @@ transaccionController.getTransaccionesByEmail = async (req, res) => {
   }
 };
 
+// get transacciones por modena origen y moneda destino
+transaccionController.getTransaccionesByMoneda = async (req, res) => {
+  const { monedaOrigen, monedaDestino } = req.query;
+
+  if (!monedaOrigen || !monedaDestino) {
+    return res.status(400).json({ message: 'Las monedas de origen y destino son requeridas' });
+  }
+
+  try {
+    const transaccionesByMoneda = await TransaccionModel.find({monedaOrigen,monedaDestino});
+    return res.json({ transacciones: transaccionesByMoneda });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener transacciones', error: error.message });
+  }
+};
+
 module.exports = transaccionController;

@@ -7,5 +7,6 @@ const transaccionController = require('../controllers/transaccion.controller');
 router.post('/', transaccionController.create);
 router.get('/', transaccionController.getAllTransacciones);
 router.get('/porEmail', transaccionController.getTransaccionesByEmail);
+router.get('/moneda', transaccionController.getTransaccionesByMoneda);
 
 module.exports = router;
