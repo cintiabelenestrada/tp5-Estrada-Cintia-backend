@@ -6,5 +6,6 @@ const transaccionController = require('../controllers/transaccion.controller');
 //definimos las rutas para la gestion de transacciones
 router.post('/', transaccionController.create);
 router.get('/', transaccionController.getAllTransacciones);
+router.get('/porEmail', transaccionController.getTransaccionesByEmail);
 
 module.exports = router;

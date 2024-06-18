@@ -24,4 +24,20 @@ transaccionController.getAllTransacciones = async (req, res) => {
   res.json({transacciones });
 };
 
+//get para traer transacciones por email
+transaccionController.getTransaccionesByEmail = async (req, res) => {
+  const emailCliente = req.query.emailCliente;
+
+  if (!emailCliente) {
+    return res.status(400).json({ message: 'El email del cliente es requerido' });
+  }
+
+  try {
+    const transaccionesEmail = await TransaccionModel.find({emailCliente});
+    return res.json({transacciones: transaccionesEmail});
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener transacciones', error });
+  }
+};
+
 module.exports = transaccionController;
