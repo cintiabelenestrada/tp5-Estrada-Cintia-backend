@@ -18,4 +18,10 @@ transaccionController.create = async (req, res) => {
   }
 };
 
+//get all transacciones
+transaccionController.getAllTransacciones = async (req, res) => {
+  var transacciones = await TransaccionModel.find();
+  res.json({transacciones });
+};
+
 module.exports = transaccionController;
