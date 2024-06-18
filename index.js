@@ -20,8 +20,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/producto',require('./punto1/routes/producto.route.js'));
 app.use('/api/espectador',require('./punto3/routes/espectador.route.js'));
-
-
+app.use('/api/transaccion',require('./punto2/routes/transaccion.route.js'));
 // Iniciar el servidor
 app.listen(port, () => {
  console.log(`Servidor escuchando en http://localhost:${port}`);
