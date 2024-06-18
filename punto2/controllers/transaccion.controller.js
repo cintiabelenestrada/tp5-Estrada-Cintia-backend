@@ -52,7 +52,7 @@ transaccionController.getTransaccionesByMoneda = async (req, res) => {
     const transaccionesByMoneda = await TransaccionModel.find({monedaOrigen,monedaDestino});
     return res.json({ transacciones: transaccionesByMoneda });
   } catch (error) {
-    res.status(500).json({ message: 'Error al obtener transacciones', error: error.message });
+    res.status(500).json({ message: 'Error al obtener transacciones', error });
   }
 };
 
