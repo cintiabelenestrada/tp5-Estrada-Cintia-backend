@@ -25,13 +25,8 @@ libroCtrl.getLibros = async (req, res) => {
 
 // consultar libros por codigo y autor
 libroCtrl.getLibrosByCodigoAutor = async (req, res) => {
-  const { codigo } = req.query;
-    try {
-      const LibrosAutores = await libro.find({ codigo });
-      return res.json(LibrosAutores);
-    } catch (error) {
-      res.status(500).json({ message: 'Error', error });
-    }
+  var codigo = await Libro.findById(req.params.id).populate("autor");
+    res.status(200).json(codigo);
   };
 
 module.exports = libroCtrl;

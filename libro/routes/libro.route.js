@@ -8,6 +8,6 @@ const router = express.Router();
 //definimos las rutas para la gestion de autores
 router.post('/', libroCtrl.createLibro);
 router.get('/', libroCtrl.getLibros);
-router.get('/codigo', libroCtrl.getLibrosByCodigoAutor);
+router.get('/:id', libroCtrl.getLibrosByCodigoAutor);
 
 module.exports = router;
