@@ -21,6 +21,9 @@ app.get('/', (req, res) => {
 app.use('/api/producto',require('./punto1/routes/producto.route.js'));
 app.use('/api/espectador',require('./punto3/routes/espectador.route.js'));
 app.use('/api/transaccion',require('./punto2/routes/transaccion.route.js'));
+app.use('/api/autores',require('./libro/routes/autores.route.js'));
+app.use('/api/libros',require('./libro/routes/libro.route.js'));
+
 // Iniciar el servidor
 app.listen(port, () => {
  console.log(`Servidor escuchando en http://localhost:${port}`);
